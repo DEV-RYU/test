@@ -1,0 +1,33 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client_socketio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "agent": "node client_socketio.js 6HTG3uMwqdtVacDNAAAA"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "forever": "^1.0.0",
+    "hashmap": "^2.3.0",
+    "http": "0.0.0",
+    "is-empty": "^1.2.0",
+    "mariadb": "^2.0.5",
+    "mime": "^2.4.4",
+    "mysql": "^2.17.1",
+    "nodemailer": "^6.3.0",
+    "os": "^0.1.1",
+    "os-utils": "0.0.14",
+    "pm2": "^3.5.1",
+    "request": "^2.88.0",
+    "request-progress": "^3.0.0",
+    "socketio": "^1.0.0",
+    "stream": "0.0.2"
+  }
+}
