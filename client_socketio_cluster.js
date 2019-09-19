@@ -147,7 +147,14 @@ console.log("-------------------------------------------------");
           }
         }
       });
+
+      socket.on('disconnect', function(data){
+      	console.log("socket disconnect!");
+        socket.removeListener('toagent-mode');
+      });
+
     });
+
     fnGetOsUtil(); // Cpu, Memory 사용량 조회
   } else{
     //마스터가 보낸 메시지 처리
@@ -159,7 +166,7 @@ console.log("-------------------------------------------------");
         fnMgProcess();
       }
     });
-    //fnStartMg(); // 마이그레이션 start
+    fnStartMg(); // 마이그레이션 start
 
     //mail.sendMail();    // 메일 전송
   }
@@ -218,12 +225,12 @@ function fnGetUserInfo(){
       } else{
         var length = data.length;
         for(var i=0; i<length; i++){
-          if('Y' == data[i].varifyYN && 'S' == data[i].type){
+          if('Y' == data[i].varifyyn && 'S' == data[i].type){
             // 인증된 Source Info
             sCecUrl = data[i].baseurl;    // Source URL
             sCecId = data[i].USER;        // Source ID
             sCecPw = data[i].pwd;         // Source Password
-          } else if('Y' == data[i].varifyYN && 'T' == data[i].type){
+          } else if('Y' == data[i].varifyyn && 'T' == data[i].type){
             // 인증된 Target Info
             tCecUrl = data[i].baseurl;    // Target URL
             tCecId = data[i].USER;        // Target ID
