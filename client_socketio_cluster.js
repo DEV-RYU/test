@@ -506,7 +506,7 @@ function fnUpdateTargetFileInfo(param){
 // 파일 삭제 함수
 function fnFileRemove(){
   return new Promise((resolve, reject) => {
-    fs.unlink('D:/' + fileNm, function(err){
+    fs.unlink(systemInfo.downloadPath + fileNm, function(err){
         if( err ) {
           console.log(err.errortitle);
           console.log(err.message);
